@@ -1,0 +1,38 @@
+my-cool-infra: &my-cool-infra-base
+  image: paulcichonski/my-cool-infra:v1.0.0
+  volumes:
+    - ./terraform.tfvars:/opt/vars/env.tfvars
+  environment:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION=us-west-2
+    - REMOTE_BACKEND_S3_BUCKET
+    - REMOTE_BACKEND_S3_KEY
+
+graph:
+  <<: *my-cool-infra-base
+  command: graph
+
+plan:
+  <<: *my-cool-infra-base
+  entrypoint: ["/opt/init.d/start.sh", "plan"]
+
+apply:
+  <<: *my-cool-infra-base
+  entrypoint: ["/opt/init.d/start.sh", "apply"]
+
+destroy:
+  <<: *my-cool-infra-base
+  entrypoint: ["/opt/init.d/start.sh", "destroy"]
+
+show:
+  <<: *my-cool-infra-base
+  command: show
+
+output:
+  <<: *my-cool-infra-base
+  entrypoint: ["/opt/init.d/start.sh", "output"]
+
+refresh:
+  <<: *my-cool-infra-base
+  entrypoint: ["/opt/init.d/start.sh", "refresh"]
