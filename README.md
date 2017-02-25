@@ -22,6 +22,10 @@ First make sure you have the following environment variables exported:
 To build or update the environment:
 
 ```
+## first run a plan to spot any issues
+docker-compose run plan
+
+## then apply changes
 docker-compose run apply
 ```
 
