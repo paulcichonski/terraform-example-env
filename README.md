@@ -12,6 +12,13 @@ created from [this repo](https://github.com/paulcichonski/terraform-example).
 
 This repo handles building a fictional staging environment.
 
+First make sure you have the following environment variables exported:
+
+* AWS_ACCESS_KEY_ID -> Your aws access key
+* AWS_SECRET_ACCESS_KEY -> Your aws secret key
+* REMOTE_BACKEND_S3_BUCKET -> a versioned s3 bucket in us-west-2. This will hold your Terraform state file.
+* REMOTE_BACKEND_S3_KEY -> s3 key to use for Terraform state file name.
+
 To build or update the environment:
 
 ```
