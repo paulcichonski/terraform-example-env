@@ -1,6 +1,7 @@
 # terraform-example-env
 
-Companion code for this blog post: TODO: LINK
+Companion code for this blog post: [A Terraform Workflow Part 1: Packaging and
+Versioning](https://medium.com/@paulcichonski/a-terraform-workflow-part-1-packaging-and-versioning-bc1fbbedecc6).
 
 Serves as an example for how to build a static environment from the Docker image
 created from [this repo](https://github.com/paulcichonski/terraform-workflow-example).
